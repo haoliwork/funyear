@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { TEXT_SECONDARY } from '../constants'; // 引入新的顏色常量
 
 interface ImageDisplayProps {
   src: string;
@@ -16,7 +17,8 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ src, alt, caption, classNam
     return (
       <figure className={`my-8 ${containerClassName}`}>
         <img src={src} alt={alt} className={imageClasses} loading="lazy" />
-        <figcaption className="text-center text-gray-600 text-sm mt-2">{caption}</figcaption>
+        {/* Caption 文字顏色調整 */}
+        <figcaption className={`text-center text-text-secondary text-sm mt-2`}>{caption}</figcaption>
       </figure>
     );
   }

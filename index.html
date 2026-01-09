@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>樂年 | 企業年度盛會策劃專家</title>
-    <meta name="description" content="樂年專精企業尾牙、春酒、年度慶功宴策劃。提供高端、專業、一站式活動解決方案，強化企業凝聚力與品牌形象。立即諮詢，打造您的專屬盛會！" />
+    <meta name="description" content="樂年專精高端企業尾牙、春酒、年度慶功宴策劃。提供一站式專業解決方案，強化企業凝聚力與品牌形象。立即諮詢，打造您的專屬盛會與企業傳奇！" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -13,16 +13,30 @@
         theme: {
           extend: {
             colors: {
-              'primary-red': '#7A0F1C',
-              'primary-red-dark': '#8C1D18',
-              'secondary-blue': '#0F1E2E',
-              'accent-gold': '#D4AF37',
-              // 'dark-bg': '#1a1a1a', // Removed as body is now white
-              'light-warm': '#f7e7d9'
+              'primary-bg': '#0B1320', // 全站主背景色
+              'brand-red': '#8B1C24', // 品牌主色 (皇家酒紅)
+              'accent-gold': '#D4AF37', // 高級點綴金
+              'text-light': '#F5F7FA', // 主要文字白
+              'text-secondary': '#AAB0B7', // 次要文字灰
+              'card-bg': '#0F172A', // 卡片背景色 (比主背景略淺)
+              'border-color': '#1C2333', // 卡片邊框/分隔線
             },
             fontFamily: {
               'sans': ['Noto Sans TC', 'sans-serif'],
               'serif': ['Merriweather', 'serif'],
+            },
+            keyframes: { // 自定義動畫
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            animation: { // 自定義動畫名稱，用於區塊進場淡入
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'fade-in-up-delay-1': 'fadeInUp 0.6s ease-out 0.1s forwards',
+              'fade-in-up-delay-2': 'fadeInUp 0.6s ease-out 0.2s forwards',
+              'fade-in-up-delay-3': 'fadeInUp 0.6s ease-out 0.3s forwards',
+              'fade-in-up-delay-4': 'fadeInUp 0.6s ease-out 0.4s forwards',
             }
           }
         }
@@ -42,7 +56,7 @@
 }
 </script>
 </head>
-<body class="bg-white text-gray-900 font-sans antialiased">
+<body class="bg-primary-bg text-text-secondary font-sans antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

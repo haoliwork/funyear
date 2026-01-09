@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { FormField } from '../types';
+import { CARD_BG, BORDER_COLOR, ACCENT_GOLD, TEXT_LIGHT, TEXT_SECONDARY, BRAND_RED } from '../constants'; // 引入新的顏色常量
 
 interface InputGroupProps {
   field: FormField;
@@ -9,12 +10,16 @@ interface InputGroupProps {
 }
 
 const InputGroup: React.FC<InputGroupProps> = ({ field, value, onChange }) => {
-  const inputClasses = "w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:border-accent-gold focus:ring-1 focus:ring-accent-gold text-gray-900 transition-colors duration-200"; // Changed bg-dark-bg to bg-gray-100, border-gray-600 to border-gray-300, text-light-warm to text-gray-900
+  // 輸入框樣式調整為深色背景下的高對比
+  const inputClasses = `w-full p-3 bg-card-bg border border-border-color rounded-md 
+                        focus:border-accent-gold focus:ring-1 focus:ring-accent-gold 
+                        text-text-light placeholder-text-secondary transition-colors duration-200`;
 
   return (
     <div className="mb-6">
-      <label htmlFor={field.name} className="block text-light-warm text-lg font-semibold mb-2">
-        {field.label} {field.required && <span className="text-primary-red">*</span>}
+      {/* Label 文字顏色調整 */}
+      <label htmlFor={field.name} className={`block text-text-light text-lg font-semibold mb-2`}>
+        {field.label} {field.required && <span className={`text-brand-red`}>*</span>} {/* 必填標記顏色調整 */}
       </label>
       {field.type === 'textarea' ? (
         <textarea
@@ -37,7 +42,7 @@ const InputGroup: React.FC<InputGroupProps> = ({ field, value, onChange }) => {
           required={field.required}
         >
           {field.options?.map((option) => (
-            <option key={option} value={option === '請選擇' ? '' : option} disabled={option === '請選擇'}>
+            <option key={option} value={option === '請選擇預算區間' ? '' : option} disabled={option === '請選擇預算區間'}>
               {option}
             </option>
           ))}

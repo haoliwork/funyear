@@ -3,39 +3,41 @@ import React from 'react';
 import SectionTitle from '../components/SectionTitle';
 import ProcessStep from '../components/ProcessStep';
 import Button from '../components/Button';
-import { PROCESS_STEPS } from '../constants';
+import { PROCESS_STEPS, PRIMARY_BG, BRAND_RED, ACCENT_GOLD, TEXT_LIGHT, TEXT_SECONDARY, CARD_BG, BORDER_COLOR } from '../constants';
 import { NavLink } from 'react-router-dom';
 
 const ProcessPage: React.FC = () => {
   return (
-    <div className="bg-white py-16"> {/* Changed bg-dark-bg to bg-white */}
-      {/* Hero Section for Process */}
+    <div className={`bg-primary-bg py-16`}>
+      {/* Hero Section for Process - 全新設計 */}
       <section
-        className="relative py-24 flex items-center justify-center text-center px-4"
+        className="relative py-32 flex items-center justify-center text-center px-4"
         style={{
-          backgroundImage: `url('/image/新宴會英雄.jpg.jpg.jpg.png')`, // 使用指定的新Hero圖片
+          // 建議您下載此圖片或尋找更高品質的圖片，放置於 public/image/process-hero.jpg，並將此處替換為 `url('/image/process-hero.jpg')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1556761175-57738bdf05a3?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`, 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed', // 增加視差滾動效果
+          backgroundAttachment: 'fixed',
         }}
       >
-        <div className="absolute inset-0 bg-secondary-blue opacity-80 backdrop-blur-sm"></div>
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-accent-gold leading-tight mb-4 animate-fade-in-up">
+        {/* 深色漸層遮罩 */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-bg/[0.9] to-primary-bg/[0.4]"></div>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-accent-gold leading-tight mb-6 animate-fade-in-up">
             專業策劃，安心交付
           </h1>
-          <p className="text-xl md:text-2xl text-light-warm font-medium animate-fade-in-up delay-200">
+          <p className="text-xl md:text-2xl text-text-light font-medium animate-fade-in-up animate-fade-in-up-delay-1">
             樂年六大標準流程，確保您的企業盛會從規劃到執行，全程透明、高效、完美。
           </p>
         </div>
       </section>
 
       {/* Process Steps */}
-      <section className="container mx-auto py-16 px-4 relative">
+      <section className="container mx-auto max-w-7xl py-32 px-4 relative animate-fade-in-up">
         <SectionTitle
           subtitle="我們的承諾"
           title="樂年企業活動策劃六大標準流程"
-          titleClassName="text-primary-red" // 將標題文字顏色改為酒紅色
+          titleClassName="text-text-light"
         />
         <div className="relative">
           {PROCESS_STEPS.map((step, index) => (
@@ -45,16 +47,16 @@ const ProcessPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary-red py-16 px-4 text-center mt-12">
-        <div className="container mx-auto max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-light-warm leading-tight mb-6">
+      <section className="bg-brand-red py-32 px-4 text-center mt-12 animate-fade-in-up">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-text-light leading-tight mb-6">
             讓每一步都精準到位
           </h2>
-          <p className="text-lg md:text-xl text-gray-200 mb-8">
+          <p className="text-lg md:text-xl text-text-secondary mb-8">
             選擇樂年，您選擇的不僅是卓越的活動，更是一份無可取代的安心與信任。
           </p>
           <NavLink to="/contact">
-            <Button variant="primary" className="min-w-[200px] py-3 px-8 text-lg">立即與我們聯繫</Button>
+            <Button variant="primary" className="min-w-[280px] py-4 text-xl">立即與我們聯繫</Button>
           </NavLink>
         </div>
       </section>

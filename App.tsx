@@ -9,7 +9,7 @@ import PortfolioPage from './pages/PortfolioPage';
 import ProcessPage from './pages/ProcessPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
-import { SEO_DATA } from './constants';
+import { SEO_DATA, PRIMARY_BG, TEXT_SECONDARY } from './constants'; // 引入新的顏色常量
 
 // Helper component to update SEO based on route
 const SEOUpdater: React.FC = () => {
@@ -42,7 +42,8 @@ const App: React.FC = () => {
   return (
     <Router>
       <SEOUpdater />
-      <div className="flex flex-col min-h-screen bg-white text-gray-900"> {/* Changed bg-dark-bg to bg-white and text-gray-100 to text-gray-900 */}
+      {/* 全域背景色與文字色調整 */}
+      <div className={`flex flex-col min-h-screen bg-primary-bg text-text-secondary`}>
         <Navbar />
         <main className="flex-grow pt-20"> {/* Adjust pt to be slightly more than navbar height */}
           <Routes>
