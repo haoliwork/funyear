@@ -17,17 +17,17 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
       <img
         src={testimonial.avatarUrl}
         alt={testimonial.client}
-        className={`w-24 h-24 rounded-full object-cover mb-6 border-4 border-accent-gold shadow-md`}
+        className={`w-20 h-20 rounded-full object-cover mb-6 border-4 border-accent-gold shadow-md`} // 縮小頭像
       />
       {/* 引言文字顏色與大小調整 */}
-      <p className={`text-text-light text-lg italic mb-6 leading-relaxed flex-grow`}>
+      <p className={`text-text-light text-base italic mb-6 leading-relaxed flex-grow`}> {/* 縮小引言 */}
         「{testimonial.quote}」
       </p>
       <div className={`border-t border-border-color w-24 mx-auto pt-4`}> {/* 分隔線顏色調整 */}
         {/* 客戶名稱顏色與大小調整 */}
-        <p className={`font-semibold text-accent-gold text-xl`}>{testimonial.client}</p>
+        <p className={`font-semibold text-accent-gold text-lg`}>{testimonial.client}</p> {/* 縮小客戶名稱 */}
         {/* 公司名稱顏色與大小調整 */}
-        <p className={`text-text-secondary text-md`}>{testimonial.company}</p>
+        <p className={`text-text-secondary text-sm`}>{testimonial.company}</p> {/* 縮小公司名稱 */}
       </div>
     </div>
   );

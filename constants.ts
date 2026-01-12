@@ -1,5 +1,4 @@
-
-import { NavLink, SEOData, CoreAdvantage, CaseStudy, ServiceItem, ProcessStep, Testimonial, FormField } from './types';
+import { NavLink, SEOData, CoreAdvantage, CaseStudy, ServiceItem, ProcessStep, Testimonial, FormField, HighlightImage } from './types';
 
 // --- Colors ---
 export const PRIMARY_BG = '#0B1320'; // 全站主背景色
@@ -82,38 +81,153 @@ export const CORE_ADVANTAGES: CoreAdvantage[] = [
   },
 ];
 
+// --- Trusted By Section Content ---
+export const CLIENT_LOGOS: string[] = [
+  'AMAZON',
+  'MERCEDES-BENZ',
+  'TSMC',
+  'GOOGLE',
+  'FOXCONN',
+  'ESLITE',
+  'NIKE',
+  'STARBUCKS',
+  'CATHAY PACIFIC',
+  'ASUS',
+  'IKEA',
+  'SONY',
+  'MICROSOFT',
+  'COCA-COLA',
+];
+
+export const SELLING_POINTS: string[] = [
+  '100% 準時交付',
+  '企業級活動執行規格',
+  '專屬專案團隊服務',
+];
+
+// --- Highlights Gallery Content ---
+export const HIGHLIGHTS_IMAGES: HighlightImage[] = [
+  { src: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?q=80&w=1974&auto=format&fit=crop', alt: 'Concert with purple lights' },
+  { src: 'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?q=80&w=2070&auto=format&fit=crop', alt: 'Crowd at a music festival' },
+  { src: 'https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=1974&auto=format&fit=crop', alt: 'Elegant dinner party setup' },
+  { src: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop', alt: 'People at a concert with confetti' },
+  { src: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop', alt: 'DJ performing for a crowd' },
+  { src: 'https://images.unsplash.com/photo-1522158637959-30385a09e0da?q=80&w=2070&auto=format&fit=crop', alt: 'Elegant gala dinner table setting' },
+];
+
+
 export const FEATURED_CASES: CaseStudy[] = [
   {
+    id: 'tech-gala-2023',
     name: '騰達科技 | 榮耀啟程年度盛典',
     industry: '高科技製造',
     attendees: '800人',
     theme: '智匯未來：領航新篇章',
     outcome: '結合沉浸式光影互動與AI主題表演，成功展現企業前瞻性與創新精神，員工滿意度創新高。',
-    imageUrl: 'https://picsum.photos/600/400?random=1'
+    imageUrl: 'https://picsum.photos/id/1018/1200/800',
+    subtitle: '一場融合科技與藝術的未來派對',
+    challenge: '騰達科技希望年度盛典不僅是傳統的表彰大會，更能彰顯其在高科技領域的領導地位，同時激發員工的創新熱情與歸屬感。挑戰在於如何將抽象的「AI」與「未來」概念，轉化為具體、可感知且充滿娛樂性的現場體驗。',
+    solution: [
+      '樂年團隊提出「智匯未來」核心主題，主視覺採用流動的數據光束與星際元素，打造強烈的科技未來感。',
+      '入口處設置了AI互動迎賓牆，賓客可透過語音或手勢與之互動，生成個人專屬的未來頭像，創造了絕佳的開場話題。',
+      '我們與頂尖新媒體藝術團隊合作，設計了沉浸式光影隧道，讓員工在步入會場的過程中，體驗一場穿越時空的視覺之旅。',
+      '晚宴表演環節，邀請了知名聲光藝術表演團體，帶來結合無人機與雷射光雕的AI主題秀，將晚會氣氛推向高潮。',
+    ],
+    results: [
+      '活動後滿意度調查，超過95%的員工表示體驗「遠超預期」。',
+      '媒體曝光量較前一年增長200%，成功塑造了企業的創新雇主品牌形象。',
+      '主管團隊表示，活動極大提升了團隊士氣與對公司未來發展的信心。',
+    ],
+    galleryImages: [
+      'https://picsum.photos/id/11/800/600',
+      'https://picsum.photos/id/12/800/600',
+      'https://picsum.photos/id/13/800/600',
+      'https://picsum.photos/id/14/800/600',
+    ]
   },
   {
+    id: 'finance-gala-2023',
     name: '鉅鼎金融 | 鎏金之夜春酒晚宴',
     industry: '金融服務',
     attendees: '500人',
     theme: '璀璨傳承：永續榮光',
     outcome: '以復古爵士風格打造奢華晚宴，精緻餐飲與優雅佈置深受高階主管好評，成功凝聚團隊向心力與尊榮感。',
-    imageUrl: 'https://picsum.photos/600/400?random=2'
+    imageUrl: 'https://picsum.photos/id/1025/1200/800',
+    subtitle: '重現黃金年代的奢華與榮耀',
+    challenge: '鉅鼎金融希望春酒晚宴能彰顯其穩健、專業且高端的品牌形象，為高階主管與核心員工提供一場尊榮的社交饗宴，以感謝他們過去一年的貢獻，並鞏固團隊的向心力。',
+    solution: [
+      '我們以「鎏金之夜」為題，靈感源自《大亨小傳》的黃金年代，整體佈置採用黑、金、白三色為主調，搭配水晶燈飾、羽毛與絲絨元素，營造出低調奢華的氛圍。',
+      '晚宴邀請了國內頂級爵士樂團現場演奏，從經典的Swing到柔情的Bossa Nova，為賓客帶來最純正的復古聽覺享受。',
+      '餐飲方面，我們與五星級酒店主廚合作，設計了專屬的精緻套餐，並提供專業的侍酒師服務，確保每一位賓客都能享受到頂級的味蕾體驗。',
+      '活動中設置了主題拍照區與雪茄吧，為賓客提供了優雅的社交與互動空間。',
+    ],
+    results: [
+      '高階主管團隊對活動的精緻度與品味給予高度評價。',
+      '活動不僅鞏固了團隊的尊榮感與歸屬感，更成為一次成功的內部公關活動。',
+      '精緻的現場照片在員工社交媒體上廣泛傳播，有效提升了企業的雇主形象。',
+    ],
+    galleryImages: [
+      'https://picsum.photos/id/21/800/600',
+      'https://picsum.photos/id/22/800/600',
+      'https://picsum.photos/id/23/800/600',
+      'https://picsum.photos/id/24/800/600',
+    ]
   },
   {
+    id: 'green-energy-2023',
     name: '綠能創新集團 | 綠動地球尾牙',
     industry: '綠色能源',
     attendees: '1200人',
     theme: '永續共榮：綠色脈動',
     outcome: '導入環保永續理念，打造綠色佈置與互動裝置，傳遞企業社會責任，同時氣氛熱絡，展現活力與凝聚力。',
-    imageUrl: 'https://picsum.photos/600/400?random=3'
+    imageUrl: 'https://picsum.photos/id/1043/1200/800',
+    subtitle: '一場結合環保與活力的永續慶典',
+    challenge: '作為綠色能源產業的領導者，綠能創新集團的尾牙活動必須徹底貫徹其「永續發展」的核心價值。挑戰在於如何在大型活動中，兼顧環保理念、熱鬧氛圍與員工的娛樂體驗。',
+    solution: [
+      '樂年提出「綠動地球」主題，活動所有佈置材料均採用可回收或可再生的環保材質，例如再生紙板裝置藝術、綠植牆等。',
+      '我們與社企合作，提供在地、有機的自助餐點，並嚴格執行垃圾分類與廚餘回收，將活動的碳足跡降至最低。',
+      '活動中設計了「綠能互動挑戰」遊戲，透過有趣的團隊競賽，向員工傳遞環保知識與公司的綠能成就，寓教於樂。',
+      '晚會的高潮部分，是以動能發電的地板，邀請所有員工一起跳舞，將動能轉化為電能點亮舞台主視覺，象徵著「眾志成城，點亮未來」的企業精神。',
+    ],
+    results: [
+      '成功舉辦了一場「零廢棄」的大型尾牙活動，在業界樹立了綠色企業活動的新標竿。',
+      '獨特的環保互動環節，讓員工對企業的永續理念有了更深刻的認同感。',
+      '活動被多家媒體報導，讚揚其在企業社会責任上的創新實踐。',
+    ],
+    galleryImages: [
+      'https://picsum.photos/id/31/800/600',
+      'https://picsum.photos/id/32/800/600',
+      'https://picsum.photos/id/33/800/600',
+      'https://picsum.photos/id/34/800/600',
+    ]
   },
   {
+    id: 'logistics-awards-2023',
     name: '寰宇物流 | 極速領航慶功宴',
     industry: '國際物流',
     attendees: '300人',
     theme: '航向卓越：逐夢未來',
     outcome: '以海運貨櫃元素結合科技感視覺，表彰年度優秀員工，激勵團隊士氣，達成高效且充滿榮耀的慶祝。',
-    imageUrl: 'https://picsum.photos/600/400?random=4'
+    imageUrl: 'https://picsum.photos/id/1062/1200/800',
+    subtitle: '一場表彰功勳、啟航未來的榮耀盛典',
+    challenge: '寰宇物流希望舉辦一場與眾不同的慶功宴，不僅要表彰年度績優員工，更要傳達公司在現代物流領域的「速度」、「科技」與「全球連結」的專業形象，激勵全體員工邁向新的高峰。',
+    solution: [
+      '我們將活動場地打造成一個充滿現代感與工業風的「領航碼頭」。舞台設計巧妙地融入了貨櫃、航線圖與LED動態數據等元素。',
+      '頒獎典禮的設計充滿儀式感，得獎者將走過象徵「榮耀航道」的星光大道，並從一個特製的貨櫃裝置中登場，接受全場的歡呼。',
+      '活動中穿插了快節奏的雷射鼓舞與街舞表演，象徵著物流產業的速度與激情，讓整場活動充滿活力。',
+      '我們還設計了一個大型的互動簽名牆，讓所有員工在世界地圖上簽下自己的名字，象徵著每個人都是公司全球佈局中不可或缺的一環。',
+    ],
+    results: [
+      '極具創意的活動主題與執行，讓這場慶功宴成為員工心中最難忘的一次公司活動。',
+      '成功地將頒獎典禮從一個傳統儀式，轉變為一場充滿動感與榮耀的團隊激勵大會。',
+      '活動後，團隊凝聚力顯著提升，員工紛紛表示對公司的未來發展充滿期待。',
+    ],
+    galleryImages: [
+      'https://picsum.photos/id/41/800/600',
+      'https://picsum.photos/id/42/800/600',
+      'https://picsum.photos/id/43/800/600',
+      'https://picsum.photos/id/44/800/600',
+    ]
   },
 ];
 
@@ -193,7 +307,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
 // --- Testimonials Page Content ---
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quote: '樂年的團隊展現了令人驚嘆的專業與遠見！從前期主題的策略性發想，到活動當天的無懈可擊控場，都讓我們無比安心。尾牙活動的氣氛營造與流程設計，完美超越我們的所有預期，員工們至今仍對那晚津津樂道！',
+    quote: '樂年的團隊展現了令人驚嘆的專業與遠見！從前期主題的策略性發想，到活動當天的無懈無擊控場，都讓我們無比安心。尾牙活動的氣氛營造與流程設計，完美超越我們的所有預期，員工們至今仍對那晚津津樂道！',
     client: '林總經理',
     company: '旭日科技集團',
     avatarUrl: 'https://picsum.photos/100/100?random=10'

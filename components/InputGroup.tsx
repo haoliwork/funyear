@@ -18,7 +18,7 @@ const InputGroup: React.FC<InputGroupProps> = ({ field, value, onChange }) => {
   return (
     <div className="mb-6">
       {/* Label 文字顏色調整 */}
-      <label htmlFor={field.name} className={`block text-text-light text-lg font-semibold mb-2`}>
+      <label htmlFor={field.name} className={`block text-text-light text-base font-semibold mb-2`}> {/* 字級縮小 */}
         {field.label} {field.required && <span className={`text-brand-red`}>*</span>} {/* 必填標記顏色調整 */}
       </label>
       {field.type === 'textarea' ? (

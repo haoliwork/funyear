@@ -16,12 +16,18 @@ export interface CoreAdvantage {
 }
 
 export interface CaseStudy {
+  id: string; // Unique identifier for routing
   name: string;
   industry: string;
   attendees: string;
   theme: string;
   outcome: string;
   imageUrl: string;
+  subtitle: string; // New: For detail page hero
+  challenge: string; // New: Detailed challenge description
+  solution: string[]; // New: Array of paragraphs for the solution
+  results: string[]; // New: Array of bullet points for results
+  galleryImages: string[]; // New: Array of image URLs for the gallery
 }
 
 export interface ServiceItem {
@@ -57,4 +63,9 @@ export interface SectionTitleProps { // Moved here from SectionTitle.tsx for glo
   subtitle?: string;
   className?: string; // For the outer div
   titleClassName?: string; // For the h2 title text itself
+}
+
+export interface HighlightImage {
+  src: string;
+  alt: string;
 }

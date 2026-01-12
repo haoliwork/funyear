@@ -9,7 +9,8 @@ import PortfolioPage from './pages/PortfolioPage';
 import ProcessPage from './pages/ProcessPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
-import { SEO_DATA, PRIMARY_BG, TEXT_SECONDARY } from './constants'; // 引入新的顏色常量
+import CaseDetailPage from './pages/CaseDetailPage'; // Import the new page
+import { SEO_DATA, FEATURED_CASES, PRIMARY_BG, TEXT_SECONDARY } from './constants'; // 引入新的顏色常量
 
 // Helper component to update SEO based on route
 const SEOUpdater: React.FC = () => {
@@ -17,16 +18,28 @@ const SEOUpdater: React.FC = () => {
 
   useEffect(() => {
     let currentSEO = SEO_DATA.home; // Default to home SEO
+    const pathname = location.pathname;
 
-    if (location.pathname === '/services') {
+    const portfolioMatch = pathname.match(/^\/portfolio\/([^/]+)/);
+
+    if (portfolioMatch) {
+      const caseId = portfolioMatch[1];
+      const caseData = FEATURED_CASES.find(c => c.id === caseId);
+      if (caseData) {
+        currentSEO = {
+          title: `樂年 | 成功案例 - ${caseData.name}`,
+          metaDescription: `深入了解樂年為 ${caseData.industry} 的 ${caseData.name} 專案，如何透過 ${caseData.theme} 主題，達成 ${caseData.outcome}`
+        };
+      }
+    } else if (pathname === '/services') {
       currentSEO = SEO_DATA.services;
-    } else if (location.pathname === '/portfolio') {
+    } else if (pathname === '/portfolio') {
       currentSEO = SEO_DATA.portfolio;
-    } else if (location.pathname === '/process') {
+    } else if (pathname === '/process') {
       currentSEO = SEO_DATA.process;
-    } else if (location.pathname === '/testimonials') {
+    } else if (pathname === '/testimonials') {
       currentSEO = SEO_DATA.testimonials;
-    } else if (location.pathname === '/contact') {
+    } else if (pathname === '/contact') {
       currentSEO = SEO_DATA.contact;
     }
     // For other paths or unmatched, it remains home SEO
@@ -50,6 +63,7 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/portfolio/:caseId" element={<CaseDetailPage />} /> {/* Add new route */}
             <Route path="/process" element={<ProcessPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/contact" element={<ContactPage />} />
